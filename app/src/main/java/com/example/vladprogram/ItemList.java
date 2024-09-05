@@ -4,7 +4,7 @@ public class ItemList {
 
     int item_time_hour, item_time_min, number_guest, cal_1, cal_2;
     String name_guest, comments;
-
+//
 
     public ItemList(int item_time_hour, int item_time_min, String name_guest, int number_guest, int cal_1, int cal_2, String comments) {
         this.item_time_hour = item_time_hour;

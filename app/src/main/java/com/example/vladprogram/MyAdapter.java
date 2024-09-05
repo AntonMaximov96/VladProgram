@@ -24,6 +24,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         notifyDataSetChanged();
     }
 
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -56,11 +57,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public long getItemId(int position) {
         return personList.get(position).getId();
-
     }
+
 
     public void removeItem(int position) {
         personList.remove(position);
-        notifyItemRemoved(position); // Уведомляем адаптер об удалении
+        notifyItemRemoved(position);
     }
+
+
 }

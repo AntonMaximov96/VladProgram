@@ -48,9 +48,12 @@ public class TwoActivity extends AppCompatActivity {
                         new MyButtonClickListener() {
                             @Override
                             public void onClick(int pos) {
+
                                 int s = (int) adapter.getItemId(pos);
-                                Toast.makeText(TwoActivity.this, "Delete click - " + s, Toast.LENGTH_SHORT).show();
                                 deleteObjectById(s);
+                                adapter.removeItem(pos);
+
+                                Toast.makeText(TwoActivity.this, "Delete click - " + s, Toast.LENGTH_SHORT).show();
                             }
                         }
                 ));
@@ -85,14 +88,11 @@ public class TwoActivity extends AppCompatActivity {
 
     }
 
-
     public void deleteObjectById(int id) {
         PersonDataBase db = PersonDataBase.getDBinstance(this.getApplicationContext());
         try {
-            // Удаление объекта по идентификатору
-            db.getPersonDAO().deletePerson(id);
 
-            // Обновление пользовательского интерфейса
+            db.getPersonDAO().deletePerson(id);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -104,6 +104,13 @@ public class TwoActivity extends AppCompatActivity {
         }
     }
 
+
+    private void removeSingleItem(int position) {
+        PersonDataBase db = PersonDataBase.getDBinstance(this.getApplicationContext());
+        int s = personList.get(position).getId();
+        db.getPersonDAO().deletePerson(s);
+        adapter.notifyItemRemoved(position);
+    }
 
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
