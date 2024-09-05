@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">VladProgram</string>
+    <string name="text_time">:</string>
+    <string name="text_time_number">00</string>
+    <string name="start">Начало</string>
+    <string name="next_activity">Список гостей</string>
+    <string name="name_guest">Имя гостя:</string>
+    <string name="checkbox_name_one">Lite</string>
+    <string name="checkbox_name_two">Hard</string>
+    <string name="number_people">Колличество гостей</string>
+    <string name="frequent_guest">Постоянники</string>
+    <string name="comments">Комментарии</string>
+    <string name="time_min">min</string>
+    <string name="time_hour">hour</string>
+    <string name="todo">TODO</string>
+    <string name="plus_basis_one">plus_basis_one</string>
+    <string name="minus_basis_one">minus_basis_one</string>
+    <string name="plus_prem_two">plus_prem_two</string>
+    <string name="minus_prem_two">minus_prem_two</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="element">:</string>
+    <string name="time">Время</string>
+    <string name="add_button">add_button</string>
+</resources>

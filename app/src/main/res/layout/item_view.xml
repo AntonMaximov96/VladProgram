@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="144dp"
+    android:layout_margin="5dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout_up"
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="23dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="75dp"
+                android:layout_height="23dp"
+                android:text="@string/name_guest"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/name_guest_item"
+                android:layout_width="match_parent"
+                android:layout_height="23dp"
+                tools:hint=" Дима" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="23dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/text_time"
+                android:layout_width="50dp"
+                android:layout_height="23dp"
+                android:text="@string/time"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/text_time_hour"
+                android:layout_width="40dp"
+                android:layout_height="23dp"
+                android:hint="@string/time_hour"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/element"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:textAlignment="center"
+                tools:text=" : " />
+
+            <TextView
+                android:id="@+id/text_time_min"
+                android:layout_width="40dp"
+                android:layout_height="23dp"
+                android:hint="@string/time_min"
+                android:textAlignment="center" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout_middle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearLayout_up"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/linearLayout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/recyclerView_one"
+                android:layout_width="0dp"
+                android:layout_height="95dp"
+                android:layout_weight="1"
+                android:background="#eeeeee">
+
+                <TextView
+                    android:id="@+id/text_client"
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:text="@string/number_people"
+                    android:textAlignment="center" />
+
+
+                <TextView
+                    android:id="@+id/text_num_people"
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_below="@+id/text_client"
+                    android:textAlignment="center"
+                    tools:hint="0" />
+
+                <Button
+                    android:id="@+id/button_one_client"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="58dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="2dp"
+                    android:backgroundTint="@color/green"
+                    android:gravity="center"
+                    android:text="@string/plus"
+                    android:textColor="@color/white"
+                    app:cornerRadius="3dp" />
+
+                <Button
+                    android:id="@+id/button_two_client"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="58dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="2dp"
+                    android:backgroundTint="@color/red"
+                    android:text="@string/minus"
+                    android:textColor="@color/white"
+                    app:cornerRadius="3dp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/recyclerView_lite"
+                android:layout_width="0dp"
+                android:layout_height="95dp"
+                android:layout_weight="1"
+                android:background="#eeeeee">
+
+                <TextView
+                    android:id="@+id/text_lite"
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:text="@string/checkbox_name_one"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/cal_num_lite"
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_below="@+id/text_lite"
+                    android:textAlignment="center"
+                    tools:hint="0" />
+
+                <Button
+                    android:id="@+id/button_one_lite"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="58dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="2dp"
+                    android:backgroundTint="@color/green"
+                    android:gravity="center"
+                    android:text="@string/plus"
+                    android:textColor="@color/white"
+                    app:cornerRadius="3dp" />
+
+                <Button
+                    android:id="@+id/button_two_lite"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="58dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="2dp"
+                    android:backgroundTint="@color/red"
+                    android:text="@string/minus"
+                    android:textColor="@color/white"
+                    app:cornerRadius="3dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="95dp"
+                android:layout_weight="1"
+                android:background="#eeeeee">
+
+
+                <TextView
+                    android:id="@+id/text_hard"
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:text="@string/checkbox_name_two"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/cal_num_hard"
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_below="@+id/text_hard"
+                    android:textAlignment="center"
+                    tools:hint="0" />
+
+                <Button
+                    android:id="@+id/button_one_hard"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="58dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="2dp"
+                    android:backgroundTint="@color/green"
+                    android:gravity="center"
+                    android:text="@string/plus"
+                    android:textColor="@color/white"
+                    app:cornerRadius="3dp" />
+
+                <Button
+                    android:id="@+id/button_two_hard"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="58dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="2dp"
+                    android:backgroundTint="@color/red"
+                    android:text="@string/minus"
+                    android:textColor="@color/white"
+                    app:cornerRadius="3dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/commentsActivityTwo"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:hint="@string/comments"
+        tools:paddingStart="5dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black" />
+
+</RelativeLayout>
+

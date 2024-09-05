@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="75dp"
+        android:textSize="18sp"
+        android:ems="6"
+        android:gravity="center"
+        android:text="@string/time" />
+
+    <EditText
+        android:id="@+id/text_time_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="100dp"
+        android:autofillHints="username"
+        android:hint="@string/text_time_number"
+        android:ems="3"
+        android:gravity="center"
+        android:inputType="time"
+        android:minHeight="48dp"
+        android:maxLines="1"
+        android:maxLength="2"
+        android:ellipsize="end"
+        android:textColorHint="#546E7A" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="118dp"
+        android:text="@string/text_time" />
+
+    <EditText
+        android:id="@+id/text_time_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="134dp"
+        android:autofillHints="username"
+        android:ellipsize="end"
+        android:ems="3"
+        android:gravity="center"
+        android:hint="@string/text_time_number"
+        android:inputType="time"
+        android:maxLength="2"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A" />
+
+    <EditText
+        android:id="@+id/name_guest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="200dp"
+        android:ems="10"
+        android:autofillHints="username"
+        android:gravity="center"
+        android:hint="@string/name_guest"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"/>
+
+    <EditText
+        android:id="@+id/comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="460dp"
+        android:autofillHints="username"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/comments"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A" />
+
+    <Button
+        android:id="@+id/constants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginVertical="140dp"
+        android:layout_marginHorizontal="50dp"
+        android:text="@string/frequent_guest"
+        />
+
+    <Button
+        android:id="@+id/begin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="80dp"
+        android:text="@string/start" />
+    <Button
+        android:id="@+id/next_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginVertical="20dp"
+        android:text="@string/next_activity" />
+
+    <EditText
+        android:id="@+id/number_of_guests"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_guest"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="50dp"
+        android:autofillHints="username"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/number_people"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A" />
+
+    <EditText
+        android:id="@+id/basic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="370dp"
+        android:autofillHints="username"
+        android:ems="3"
+        android:gravity="center"
+        android:inputType="number"
+        android:hint="@string/text_time_number"
+        android:minHeight="48dp"
+        android:maxLines="1"
+        android:maxLength="2"
+        android:ellipsize="end"
+        android:textColorHint="#546E7A" />
+
+    <EditText
+        android:id="@+id/premium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="370dp"
+        android:autofillHints="username"
+        android:ems="3"
+        android:gravity="center"
+        android:layout_marginEnd="80dp"
+        android:inputType="number"
+        android:hint="@string/text_time_number"
+        android:minHeight="48dp"
+        android:maxLines="1"
+        android:maxLength="2"
+        android:ellipsize="end"
+        android:textColorHint="#546E7A"
+        />
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/basic"
+        android:layout_marginStart="84dp"
+        android:text="@string/checkbox_name_one" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/premium"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="89dp"
+        android:text="@string/checkbox_name_two" />
+
+
+
+</RelativeLayout>
