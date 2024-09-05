@@ -51,7 +51,6 @@ public class TwoActivity extends AppCompatActivity {
                                 int s = (int) adapter.getItemId(pos);
                                 Toast.makeText(TwoActivity.this, "Delete click - " + s, Toast.LENGTH_SHORT).show();
                                 deleteObjectById(s);
-
                             }
                         }
                 ));
