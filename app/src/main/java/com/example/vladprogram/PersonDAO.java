@@ -13,7 +13,7 @@ public interface PersonDAO {
     @Insert
     void addPerson(Person person);
     @Update
-    void updatePerson(Person person);
+    int updatePerson(Person person);
     @Delete
     void deletePerson(Person person);
 
@@ -25,6 +25,9 @@ public interface PersonDAO {
 
     @Query("delete from person where person_id =:person_id")
     public void deletePerson(int person_id);
+
+    @Query("update person set premium = :premium WHERE person_id = :person_id")
+    int updatePersonPremium(int person_id, int premium);
 
 
 }

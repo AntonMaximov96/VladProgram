@@ -13,6 +13,10 @@
         android:theme="@style/Theme.VladProgram"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity_Item"
+            android:exported="false" />
+
+        <activity
             android:name=".TwoActivity"
             android:exported="false" />
         <activity

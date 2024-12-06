@@ -28,6 +28,8 @@ public class Person implements Serializable {
     String premium = "";
     @ColumnInfo(name = "comments")
     String comments = "";
+
+
     @Ignore
     public Person(){
     }
@@ -42,6 +44,12 @@ public class Person implements Serializable {
         this.premium = premium;
         this.comments = comments;
     }
+
+    public Person( int premium) {
+        this.id = 0;
+        this.premium = String.valueOf(premium);
+    }
+
 
     public int getId() {
         return id;

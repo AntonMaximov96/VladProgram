@@ -3,16 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="144dp"
-    android:layout_margin="5dp"
-    app:cardElevation="4dp">
+    android:layout_height="190dp"
+    app:cardElevation="4dp"
+    >
 
     <LinearLayout
         android:id="@+id/linearLayout_up"
         android:layout_width="match_parent"
         android:layout_height="23dp"
         android:orientation="horizontal">
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="23dp"
@@ -77,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/linearLayout_up"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/linearLayout_button"
@@ -109,6 +111,20 @@
                     tools:hint="0" />
 
                 <Button
+                    android:id="@+id/button_two_client"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="58dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="2dp"
+                    android:backgroundTint="@color/red"
+                    android:text="@string/minus"
+                    android:textColor="@color/white"
+                    app:cornerRadius="3dp" />
+                <Button
                     android:id="@+id/button_one_client"
                     style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="58dp"
@@ -123,20 +139,7 @@
                     android:textColor="@color/white"
                     app:cornerRadius="3dp" />
 
-                <Button
-                    android:id="@+id/button_two_client"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="58dp"
-                    android:layout_height="48dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_marginBottom="2dp"
-                    android:backgroundTint="@color/red"
-                    android:text="@string/minus"
-                    android:textColor="@color/white"
-                    app:cornerRadius="3dp" />
+
 
 
             </RelativeLayout>
@@ -248,14 +251,45 @@
                     app:cornerRadius="3dp" />
             </RelativeLayout>
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/commentsActivityTwo"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:hint="@string/comments"
+            tools:paddingStart="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/time_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="00:00:00"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/end"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Посчитать"
+                app:cornerRadius="3dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+
     </LinearLayout>
-    <TextView
-        android:id="@+id/commentsActivityTwo"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_alignParentBottom="true"
-        android:hint="@string/comments"
-        tools:paddingStart="5dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="2dp"
@@ -263,4 +297,3 @@
         android:background="@color/black" />
 
 </RelativeLayout>
-

@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -19,14 +20,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class TwoActivity extends AppCompatActivity {
-    PersonDataBase personDB;
     RecyclerView recyclerView;
     MyAdapter adapter;
-    Person person;
     LinearLayoutManager layoutManager;
-    List<Person> personList;
     ImageButton add_button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +34,7 @@ public class TwoActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+
         MySwipeHelper swipeHelper = new MySwipeHelper(this, recyclerView, 200) {
             @Override
             public void instantiateMyButton(RecyclerView.ViewHolder viewHolder, List<MySwipeHelper.MyButton> buffer) {
@@ -66,7 +64,6 @@ public class TwoActivity extends AppCompatActivity {
                         new MyButtonClickListener() {
                             @Override
                             public void onClick(int pos) {
-
                                 Toast.makeText(TwoActivity.this, "Update click", Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -86,6 +83,7 @@ public class TwoActivity extends AppCompatActivity {
         initRecyclerView();
         getAllCategoryList();
 
+
     }
 
     public void deleteObjectById(int id) {
@@ -104,13 +102,6 @@ public class TwoActivity extends AppCompatActivity {
         }
     }
 
-
-    private void removeSingleItem(int position) {
-        PersonDataBase db = PersonDataBase.getDBinstance(this.getApplicationContext());
-        int s = personList.get(position).getId();
-        db.getPersonDAO().deletePerson(s);
-        adapter.notifyItemRemoved(position);
-    }
 
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
@@ -146,4 +137,23 @@ public class TwoActivity extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
+    public void updatePersonPremium(int person_id, int premium) {
+        PersonDataBase db = PersonDataBase.getDBinstance(this.getApplicationContext());
+        PersonDAO personDao = db.getPersonDAO();
+        int rowsUpdated = personDao.updatePersonPremium(person_id,premium);
+        List<Person> userList = db.getPersonDAO().getAllPerson();
+        adapter.setUserList(userList);
+        adapter.notifyItemChanged(person_id);
+
+        if (rowsUpdated > 0) {
+            Toast.makeText(this, "Данные успешно обновлены", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Обновление не произошло", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+
 }
+

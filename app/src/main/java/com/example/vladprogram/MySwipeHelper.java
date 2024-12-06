@@ -36,10 +36,15 @@ public abstract class MySwipeHelper extends ItemTouchHelper.SimpleCallback {
     private float swipeThreshold = 0.5f;
     private final Map<Integer, List<MyButton>> buttonBuffer;
     private final Queue<Integer> removerQueue;
+
     private GestureDetector.SimpleOnGestureListener gestureListener = new GestureDetector.SimpleOnGestureListener() {
 
         @Override
         public boolean onSingleTapUp(MotionEvent e) {
+            // boolean onSingleTapUp(MotionEvent e) — это метод интерфейса OnGestureListener.
+            //                                       Он уведомляет, когда происходит касание с соответствующим событием MotionEvent.
+            //                                       Метод возвращает true, если событие было обработано, в противном случае — false.
+
             for (MyButton button : buttonList) {
                 if (button.onClick(e.getX(), e.getY()))
                     break;
@@ -47,6 +52,8 @@ public abstract class MySwipeHelper extends ItemTouchHelper.SimpleCallback {
             return true;
         }
     };
+
+
     private View.OnTouchListener onTouchListener = new View.OnTouchListener() {
 
         @Override
@@ -110,13 +117,18 @@ public abstract class MySwipeHelper extends ItemTouchHelper.SimpleCallback {
 
 
     public class MyButton {
+//Класс MyButton — это пользовательский класс, который позволяет разработчикам создавать
+//                  и настраивать свои собственные кнопки в приложениях Android.
 
-        private String text;
-        private int imageResId, textSize, color, pos;
+        private final String text;
+        private final int imageResId;
+        private final int textSize;
+        private final int color;
+        private int pos;
         private RectF clickRegion;
-        private com.example.vladprogram.MyButtonClickListener listener;
-        private Context context;
-        private Resources resources;
+        private final com.example.vladprogram.MyButtonClickListener listener;
+        private final Context context;
+        private final Resources resources;
 
         public MyButton(Context context, String text, int textSize, int imageResId, int color, com.example.vladprogram.MyButtonClickListener listener) {
             this.text = text;
@@ -125,7 +137,7 @@ public abstract class MySwipeHelper extends ItemTouchHelper.SimpleCallback {
             this.color = color;
             this.listener = listener;
             this.context = context;
-            resources = context.getResources();
+            this.resources = context.getResources();
         }
 
         public boolean onClick(float x, float y) {
@@ -152,7 +164,7 @@ public abstract class MySwipeHelper extends ItemTouchHelper.SimpleCallback {
             float x = 0, y = 0;
             if (imageResId == 0) //If just  show text
             {
-                x = cWidth / 2f - r.width() / 2 - r.left;
+                x = cWidth / 2f - r.width() / 2f - r.left;
                 y = cHeight / 2f + r.height() / 2f - r.bottom;
                 c.drawText(text, rectF.left + x, rectF.top + y, p);
             } else {
@@ -198,12 +210,6 @@ public abstract class MySwipeHelper extends ItemTouchHelper.SimpleCallback {
         swipeThreshold = 0.5f * buttonList.size() * buttonWidth;
         recoverSwipedItem();
 
-    }
-
-    //Возмонжно удалить момент на видео 24:41
-    @Override
-    public void onMoved(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, int fromPos, @NonNull RecyclerView.ViewHolder target, int toPos, int x, int y) {
-        super.onMoved(recyclerView, viewHolder, fromPos, target, toPos, x, y);
     }
 
 
