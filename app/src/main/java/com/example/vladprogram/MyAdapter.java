@@ -16,15 +16,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     private MyAdapter adapter;
     private final Context context;
     private List<Person> personList;
+    RecyclerView recyclerView;
+    TwoActivity twoActivity;
 
-
-    public MyAdapter(Context context) {
+    public MyAdapter(Person person,Context context) {
         this.context = context;
     }
 
     public void setUserList(List<Person> personList) {
         this.personList = personList;
         notifyDataSetChanged();
+
     }
 
     @NonNull
@@ -69,30 +71,30 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.comments.setText(this.personList.get(position).comments);
 
         int id = (int) getItemId(position);
+        int pos2 = position;
+
+
 
 
         holder.button_one_hard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int position = holder.getAdapterPosition() +1;
+                int position = holder.getAdapterPosition() + 1;
 
                 PersonDataBase db = PersonDataBase.getDBinstance(context.getApplicationContext());
                 PersonDAO personDao = db.getPersonDAO();
-                personDao.updatePersonPremium(id, 6);
-                List<Person> userList = db.getPersonDAO().getAllPerson();
+                personDao.updatePersonPremium(id, 7);
 
-                adapter = new MyAdapter(context.getApplicationContext());
 
-                adapter.setUserList(userList);
-                adapter.notifyItemChanged(position);
-                adapter.notifyDataSetChanged();
+
+                List<Person> personList = db.getPersonDAO().getAllPerson();
+
+//                adapter = new MyAdapter(context.getApplicationContext());
+                notifyDataSetChanged();
+
                 Toast.makeText(context.getApplicationContext(), "position: " + id + " " + position, Toast.LENGTH_SHORT).show();
 
 
-//                Person person = personList.get(pos);
-////
-//                adapter.notifyDataSetChanged();
-//                adapter.notifyItemChanged(pos);
             }
         });
 
@@ -152,6 +154,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         personList.remove(position);
         notifyItemRemoved(position);
     }
+
 
 
 }

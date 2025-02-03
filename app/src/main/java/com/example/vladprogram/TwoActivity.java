@@ -79,7 +79,6 @@ public class TwoActivity extends AppCompatActivity {
             }
         });
 
-
         initRecyclerView();
         getAllCategoryList();
 
@@ -108,7 +107,7 @@ public class TwoActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
-        adapter = new MyAdapter(this);
+        adapter = new MyAdapter(new Person(),this);
         recyclerView.setAdapter(adapter);
     }
 
@@ -137,23 +136,6 @@ public class TwoActivity extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
-    public void updatePersonPremium(int person_id, int premium) {
-        PersonDataBase db = PersonDataBase.getDBinstance(this.getApplicationContext());
-        PersonDAO personDao = db.getPersonDAO();
-        int rowsUpdated = personDao.updatePersonPremium(person_id,premium);
-        List<Person> userList = db.getPersonDAO().getAllPerson();
-        adapter.setUserList(userList);
-        adapter.notifyItemChanged(person_id);
-
-        if (rowsUpdated > 0) {
-            Toast.makeText(this, "Данные успешно обновлены", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Обновление не произошло", Toast.LENGTH_SHORT).show();
-        }
-
-    }
-
 
 }
 
